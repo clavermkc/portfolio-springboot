@@ -13,8 +13,8 @@ import org.silentsoft.simpleicons.icons.FrameworkIcon;
 import javax.swing.*;
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class SkillDto {
     private String category;
     private String skill_name;
