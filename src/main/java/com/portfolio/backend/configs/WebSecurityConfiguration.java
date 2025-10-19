@@ -75,6 +75,7 @@ public class WebSecurityConfiguration {
                                         "/v3/api-docs/**",
                                         "/api-docs/**",
                                         "/webjars/**",
+                                        "/error",
                                         "/swagger-resources/**",
                                         "/favicon.ico").permitAll()
                                 .requestMatchers("/").permitAll()
