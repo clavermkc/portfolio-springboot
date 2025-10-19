@@ -1,0 +1,15 @@
+{
+  "name": "Portfolio claveri start on  Heroku: Java",
+  "description": "A barebones Java app, which can easily be deployed to Heroku.",
+  "addons": ["heroku-postgresql"],
+
+
+  "buildpacks": [
+    {
+      "url": "https://github.com/clavermkc/portfolio/tree/main"
+    },
+    {
+      "url": "heroku/java"
+    }
+  ]
+}
