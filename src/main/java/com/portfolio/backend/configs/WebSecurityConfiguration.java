@@ -77,6 +77,7 @@ public class WebSecurityConfiguration {
                                         "/webjars/**",
                                         "/swagger-resources/**",
                                         "/favicon.ico").permitAll()
+                                .requestMatchers("/").permitAll()
                                 .requestMatchers("/api/admin/**").hasRole("ADMIN")
                                 .anyRequest().authenticated()
                 )
