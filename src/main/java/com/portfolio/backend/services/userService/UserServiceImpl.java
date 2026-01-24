@@ -8,6 +8,7 @@ import com.portfolio.backend.dtos.UserDto;
 import com.portfolio.backend.dtos.UserResponseDto;
 import com.portfolio.backend.entity.Role;
 import com.portfolio.backend.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -33,7 +34,6 @@ import com.portfolio.backend.repositories.UserRepository;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
 
     /**
