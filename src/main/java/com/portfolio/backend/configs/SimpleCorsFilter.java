@@ -64,16 +64,20 @@ public class SimpleCorsFilter implements Filter{
      */
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)throws IOException, ServletException {
-        HttpServletResponse responce = (HttpServletResponse) servletResponse;
+        HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String originHeader = request.getHeader("origin");
-        responce.setHeader("Access-Control-Allow-Origin", originHeader);
-        responce.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTION, DELETE");
-        responce.setHeader("Access-Control-Max-Age", "3600");
-        responce.setHeader("Access-Control-Allow-Headers", "*");
+        if ("http://localhost:3000".equals(originHeader)) {
+            response.setHeader("Access-Control-Allow-Origin", originHeader);
+        }
+
+        response.setHeader("Access-Control-Allow-Origin", originHeader);
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, OPTION, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "*");
 
         if("OPTIONS".equalsIgnoreCase(request.getMethod())){
-            responce.setStatus(HttpServletResponse.SC_OK);
+            response.setStatus(HttpServletResponse.SC_OK);
         }else{
             filterChain.doFilter(servletRequest, servletResponse);
         }
