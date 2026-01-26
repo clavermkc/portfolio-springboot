@@ -19,7 +19,7 @@ import java.util.Objects;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-
+@CrossOrigin(origins = {"https://https://portfolio-springboot-production-39de.up.railway.app/"})
 public class ContactUsController {
     private final ContactUsFormularService contactUsFormularService;
     private static final org.slf4j.Logger log = LoggerFactory.getLogger(ContactUsController.class);
